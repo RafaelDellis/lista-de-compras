@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de compras</title>
+     <link rel="stylesheet" href="./styles.css">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+
+    <main>
+        <!-- Adiciona uma imagem para melhorar o visual da lista -->
+        <img src="img/1374093.webp" alt="sacola de compras" style="width: 250; height:auto;"/>
+        <!-- Cria uma seção de formulário -->
+        <form>
+            <!-- Cria uma caixa de entrada para digitar itens na lista -->
+            <input class="input-item" id="input-item" type="text" placeholder="Digite o item que deseja adicionar" />
+            <button class="button-item" id="adicionar-item" type="button">Salvar item</button>  
+        </form>
+
+        <!-- Cria uma divisão, onde serão exibidos os itens adicionados na lista -->
+        <div class="container-lista">
+            <h2>Lista de compras</h2>
+            <hr />
+
+            <ul id="lista-de-compras">
+                <p class="mensagem-lista-vazia">Não há nenhum item na lista.</p>
+            </ul>
+        </div>
+    </main>
+
+    <!-- type="module" será utilizado para permitir que os scripts possam ser divididos em vários arquivos -->
+    <script type="module" src="index.js"></script>
+
+</body>
+
+</html>

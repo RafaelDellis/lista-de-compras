@@ -1,0 +1,232 @@
+
+:root {
+  --cor-primaria: #2563eb;   /* azul */
+  --cor-primaria-hover: #1d4ed8;
+
+  --cor-secundaria: #10b981; /* verde */
+  --cor-secundaria-hover: #059669;
+
+  --cor-excluir: #ef4444;    /* vermelho */
+  --cor-excluir-hover: #dc2626;
+
+  --neutro: #ffffff; 
+  --cinza: #e5e7eb;
+  --cinza-escuro: #6b7280;
+  --preto: #111827;
+
+  --fonte-titulo: "Krona One", sans-serif;
+  --fonte-texto: "Numans", sans-serif;
+
+  --degrade-fundo: linear-gradient(180deg, #79a8e6 0%, #90f17d 100%);
+}
+
+
+body {
+  background: var(--degrade-fundo);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--fonte-texto);
+  padding: 20px;
+  color: var(--preto);
+}
+
+main {
+  background-color: var(--neutro);
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 90%;
+  max-width: 520px;
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+img {
+  width: 140px;
+  border-radius: 20px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  display: block;
+  margin: 0 auto;
+}
+
+h2 {
+  font-family: var(--fonte-titulo);
+  font-size: 24px;
+  text-align: center;
+  background: linear-gradient(90deg, var(--cor-primaria), var(--cor-secundaria));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.input-item {
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 2px solid var(--cinza);
+  width: 100%;
+  background-color: #fff;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-item:focus {
+  border: 2px solid var(--cor-primaria);
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.4);
+  outline: none;
+}
+
+.button-item {
+  padding: 12px 20px;
+  border-radius: 18px;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+  background: var(--cor-primaria);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.button-item:hover {
+  background: var(--cor-primaria-hover);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.lista-item-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid var(--cinza);
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lista-item-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+}
+
+
+.lista-item-texto {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--preto);
+}
+
+
+/* Container dos botões à direita */
+.container-botoes {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto; 
+}
+
+/* Estilo base para botões redondos */
+.container-botoes button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+  
+
+
+.container-botoes i {
+  font-size: 18px;
+  pointer-events: none;
+}
+
+/* Botão excluir */
+.botao-excluir {
+  background-color: var(--cor-excluir);
+  
+}
+.botao-excluir:hover {
+  background-color: var(--cor-excluir-hover);
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+/* Botão editar */
+.botao-editar {
+  background-color: var(--cor-secundaria);
+}
+.botao-editar:hover {
+  background-color: var(--cor-secundaria-hover);
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+
+.input-checkbox {
+  display: none;
+}
+
+.checkbox-customizado {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--cor-primaria);
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.checkbox-customizado.checked {
+  background: var(--cor-primaria);
+}
+
+.checkbox-customizado.checked::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 6px;
+  height: 12px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.line-through {
+  text-decoration: line-through;
+  color: var(--cinza-escuro);
+}
